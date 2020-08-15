@@ -24,6 +24,16 @@ img {
     opacity: 0.7;
 }
 
+i {
+  font-size: 70px;
+  opacity: 0.7;
+  color: black;
+}
+
+i:hover {
+  opacity: 1;
+}
+
 img:hover {
     opacity: 1;
 }
@@ -113,7 +123,7 @@ section#home .content h1{
 
 section#portfolio .content .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(40%, 1fr));
     grid-gap: 1rem;
 }
 
@@ -123,9 +133,39 @@ section#portfolio .content .grid > div {
     border-radius: 1rem;
 }
 
-section#contact {
-  
+.grid > div > div {
+    height: 150px;
+    display: flex;
 }
+
+.grid > div > div > div:first-child {
+    align-self: center;
+    display: flex;
+    width: 20%;
+}
+
+.grid > div > div > div:nth-child(2) {
+    width: 80%;
+    align-self: center;
+}
+
+section#contact .content ul {
+    height: 100px;
+    width: 70%;
+    list-style-type: none;
+    display: table;
+    text-align: center;
+}
+
+section#contact .content ul li {
+  display: table-cell;
+  text-align: center;
+}
+
+section#contact .content ul li a {
+  display: block;
+}
+
 /* fade-in effect -- start */
 .fade-in {
     animation: fadeIn ease 4s;
