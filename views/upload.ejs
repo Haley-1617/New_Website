@@ -1,0 +1,32 @@
+<%- include("partials/header.ejs") -%>
+<h1>Upload Project</h1>
+<form action="/upload" method="POST">
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <label>Title</label>
+                <input class="form-control" type="text" name="title" size="50" autofocus>
+            </div>
+            <div class="col-md-6 mb-3">
+                <label>Type</label>
+                <input class="form-control" type="text" name="type" size="50">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <label>VideoID</label>
+                <input class="form-control" type="text" name="videoID" size="50">
+            </div>
+            <div class="col-md-6 mb-3">
+                <label>Date</label>
+                <input class="form-control" type="text" name="date" size="50">
+            </div>
+        </div>
+        <label>Tags</label>
+        <input class="form-control" type="text" name="tags" size="50">
+        <label>Description</label>
+        <textarea class="form-control" name="description" rows="5" cols="30"></textarea>
+    </div>
+    <button class="btn btn-primary" type="submit">Upload</button>
+</form>
+<%- include("partials/footer.ejs") -%>

@@ -1,0 +1,44 @@
+<%- include("partials/header.ejs") -%>
+<% for (i = 0; i < cards.length; i++) { %>
+<% if (i % 3 === 0) { %>
+<div class="card-deck">
+    <% } %>
+    <div class="card" data-toggle="modal" data-target="#exampleModalCenter" data-link="<%= cards[i].videoID %>">
+        <img class="card-img-top" src="http://img.youtube.com/vi/<%= cards[i].videoID %>/0.jpg" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title"><%= cards[i].title %></h5>
+            <p class="card-text d-none"><%= cards[i].description %></p>
+            <p class="card-text">
+                <% if (cards[i].description.length > 100) { %>
+                <%= cards[i].description.substring(0, 100) + "..." %>
+                <a href="#">See More</a>
+                <% } else { %>
+                <%= cards[i].description %>
+                <% } %>
+            </p>
+            <!-- <p class="card-text text-truncate"><%= cards[i].description %></p> -->
+            <p class="card-text"><small class="text-muted"><%= cards[i].date %></small></p>
+            <p class="card-text"><small class="text-muted"><%= cards[i].tags %></small></p>
+            <a href="#exampleModalCenter" class="stretched-link"></a>
+        </div>
+    </div>
+    <% if (i === cards.length - 1) { %>
+    <% switch(i % 3) { 
+    case 0: %>
+    <div class="card invisible"></div>
+    <div class="card invisible"></div>
+</div>
+<% break;
+case 1: %>
+<div class="card invisible"></div>
+</div>
+<% break;
+default: %>
+</div>
+<% } %>
+<% } else if (i % 3 === 2) { %>
+</div>
+<% } %>
+<% } %>
+
+<%- include("partials/footer.ejs") -%>
