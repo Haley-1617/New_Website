@@ -12,7 +12,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
 url = "mongodb+srv://HaleyLai:" + process.env.KEY + "@cluster0.ykb4d.mongodb.net/myProjectDB"
-mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(url, { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true })
     .then(() => {
         console.log('Connection to the Atlas Cluster is successful!')
     })
