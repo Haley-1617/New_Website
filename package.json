@@ -12,6 +12,9 @@
   },
   "author": "Haley Lai",
   "license": "ISC",
+  "engines": {
+    "node": "12.18.3"
+  },
   "bugs": {
     "url": "https://github.com/Haley-1617/New_Website/issues"
   },

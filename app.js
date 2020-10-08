@@ -8,10 +8,16 @@ const mongoose = require("mongoose");
 const app = express();
 app.set("view engine", "ejs");
 
-app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.static("public"));
 
-mongoose.connect("mongodb+srv://admin-haley:" + process.env.PW + "@cluster0.kqahy.mongodb.net/myProjectDB?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true });
+url = "mongodb+srv://HaleyLai:" + process.env.KEY + "@cluster0.ykb4d.mongodb.net/myProjectDB"
+mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true })
+    .then(() => {
+        console.log('Connection to the Atlas Cluster is successful!')
+    })
+    .catch((err) => console.error(err));
+// mongoose.connect("mongodb://localhost:27017/myProjectDB", { useNewUrlParser: true, useUnifiedTopology: true });
 
 const projectsSchema = {
     videoID: String,
@@ -22,7 +28,7 @@ const projectsSchema = {
     type: String
 }
 
-const Project = mongoose.model("Project", projectsSchema);
+const Project = mongoose.model("Projects", projectsSchema);
 
 app.get("/", (req, res) => {
     res.sendFile(__dirname + "/index.html");
