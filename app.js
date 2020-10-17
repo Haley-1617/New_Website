@@ -40,6 +40,10 @@ app.get("/portfolio", (req, res) => {
     })
 })
 
+app.get("/.well-known/acme-challenge/9SKsVXfeXOBA3nSrs7RP7jMZfQOOvqQ5PkyJS7e4ISY", (req, res) => {
+    res.sendFile(__dirname + "/public/.well-known/acme-challenge/9SKsVXfeXOBA3nSrs7RP7jMZfQOOvqQ5PkyJS7e4ISY")
+})
+
 // app.get("/upload", (req, res) => {
 //     res.render("upload.ejs")
 // })
